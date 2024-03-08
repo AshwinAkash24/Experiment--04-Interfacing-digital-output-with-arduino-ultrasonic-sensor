@@ -1,4 +1,8 @@
 # EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
+# Name: M.Ashwin Akash
+# Reference number: 212223230024
+# Department: AI&DS
+# Date: 8-03-2024.
 
 ## AIM: 
 To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
@@ -54,8 +58,50 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 10.	Plot the graph for the output voltage vs the resistance 
 
 
-### PROGRAM 
-
+### PROGRAM :
+```
+int echopin=6;
+int trigpin=7;
+int red=8;
+int green=9;
+long duration;
+float distance;
+void setup()
+{
+  pinMode(echopin,INPUT);
+  pinMode(trigpin,OUTPUT);
+  pinMode(red,OUTPUT);
+  pinMode(green, OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  digitalWrite(trigpin,LOW);
+  delay(10);
+  digitalWrite(trigpin, HIGH);
+  delay(10); 
+  digitalWrite(trigpin, LOW);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print("Distance=");
+  Serial.print(distance);
+  Serial.println("cms");
+  if(distance>50)
+  {
+    digitalWrite(green,HIGH);
+    delay(500);
+    digitalWrite(red,LOW);
+    delay(500);
+  }
+  else
+  {
+    digitalWrite(red,HIGH);
+    delay(500);
+    digitalWrite(green,LOW);
+    delay(500);
+  }
+}
+```
 
 
 
@@ -63,30 +109,37 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 ### Distance vs measurement table 
 
-			
- 
-			
-			
-			
-
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
-
-			
-			
-			
-			
+![ROBOEXP4Table](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/3d3fcf14-56f3-40b9-bef9-afa85a9fbcf4)
+		
 			
 			Average error = sum/ number of readings 
+### Graph:
+![ROBOEXP4GRAPH](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/604209e8-de3e-4339-8bde-7ca6f1911d3d)
+
  
+### Simulation output:
+### Figure-01: 
+### Off Condition:
+![ROBOEXP4OFF](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/516e76e6-54cc-4be4-80d4-552b81c25752)
+### Figure-02:
+### On condition:
+![ROBOEXP4ON](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/6df0a54a-ec77-4971-ac01-cc97c5f00d7a)
+### Figure-03:
+### if(distance>50,green)
+![ROBOEXP4high](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/ced1c989-c682-460f-a5b5-c4ba81a60bc8)
+### Figure-04:
+### if(distance<50,red)
+![ROBOEXP4Less](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/32b645dc-5e26-4aad-ac82-494c0afe5305)
+### Figure-05:
+### Schematic Representation:
+![ROBO 1](https://github.com/AshwinAkash24/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/144979248/62120750-e3d0-4eae-8c36-ac0ed125614c)
 
 
 
 
 
-
-
-
-### RESULTS
+### RESULTS:
+Ultrasonic sensor is interfaced with digital output and error is identified to br 0.454 cms.
 
 
 
