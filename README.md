@@ -1,8 +1,9 @@
 # EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
+# Date: 8-03-2024.
 # Name: M.Ashwin Akash
 # Reference number: 212223230024
 # Department: AI&DS
-# Date: 8-03-2024.
+
 
 ## AIM: 
 To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
