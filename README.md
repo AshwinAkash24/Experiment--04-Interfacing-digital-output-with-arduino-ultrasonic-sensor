@@ -1,4 +1,4 @@
-# EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
+# EXPERIMENT-NO-04-Distance measurement using Ultrasonic sensor
 # Date: 8-03-2024.
 # Name: M.Ashwin Akash
 # Reference number: 212223230024
